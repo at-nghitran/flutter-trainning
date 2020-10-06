@@ -9,7 +9,6 @@ class MovieItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 15),
         height: MediaQuery.of(context).size.width * 0.4,
         child: Stack(
           alignment: Alignment.center,

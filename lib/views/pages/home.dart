@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_driving/utils/constants/colors.dart';
+import 'package:flutter_driving/utils/constants/index.dart';
 import 'package:flutter_driving/views/widgets/home/index.dart';
 
 class HomePage extends StatefulWidget {
@@ -8,47 +8,57 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex;
-  @override
-  void initState() {
-    super.initState();
-    _currentIndex = 0;
-  }
-
-  _changePage(index) {
-    setState(() {
-      _currentIndex = index;
-    });
-  }
-
-  List<Widget> _bodyList = [
-    MovieList(),
-    SearchList(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(_currentIndex == 0 ? 'Popular Movie' : 'Search Result'),
-        centerTitle: true,
+      body: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: Numbers.appPadding,
+        ),
+        color: Color(0xff000000),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.only(
+                bottom: 15,
+                top: 30,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Text(
+                      'Popular Movie',
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  IconButton(
+                    padding: const EdgeInsets.all(0.0),
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.search,
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: ListView.separated(
+                itemCount: 15,
+                itemBuilder: (_, index) => MovieItem(),
+                separatorBuilder: (_, index) => SizedBox(height: 20),
+              ),
+            )
+          ],
+        ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: _changePage,
-        selectedItemColor: AppColors.dark_red,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-        ],
-      ),
-      body: _bodyList[_currentIndex],
     );
   }
 }
