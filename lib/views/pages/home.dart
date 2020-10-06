@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_driving/utils/constants/index.dart';
+import 'package:flutter_driving/views/pages/search.dart';
 import 'package:flutter_driving/views/widgets/home/index.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,7 +16,6 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.symmetric(
           horizontal: Numbers.appPadding,
         ),
-        color: Color(0xff000000),
         child: Column(
           children: [
             Container(
@@ -39,7 +39,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                   IconButton(
                     padding: const EdgeInsets.all(0.0),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (_) => SearchPage()),
+                      );
+                    },
                     icon: Icon(
                       Icons.search,
                       color: Colors.white,
