@@ -12,6 +12,7 @@ class LoginPage extends StatelessWidget {
     final double headerHeight = orientation == Orientation.portrait ? 250 : 150;
     final bool _isDisabled = false;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [

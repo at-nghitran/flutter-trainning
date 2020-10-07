@@ -16,7 +16,6 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.symmetric(
           horizontal: Numbers.appPadding,
         ),
-        color: Colors.black,
         child: Column(
           children: [
             Container(
