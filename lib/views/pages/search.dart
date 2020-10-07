@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_driving/views/widgets/home/index.dart';
 
 class SearchPage extends StatelessWidget {
+  final TextStyle _inputTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 19,
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,10 +35,7 @@ class SearchPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: TextField(
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 19,
-                      ),
+                      style: _inputTextStyle,
                       decoration: InputDecoration(
                         contentPadding: const EdgeInsets.only(
                           top: 8,
@@ -43,6 +45,9 @@ class SearchPage extends StatelessWidget {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
+                        hintText: 'Search',
+                        hintStyle:
+                            _inputTextStyle.copyWith(color: Colors.white30),
                         suffixIcon: InkWell(
                           onTap: () {},
                           highlightColor: Colors.transparent,
@@ -57,7 +62,14 @@ class SearchPage extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
+            Expanded(
+              child: ListView.separated(
+                itemCount: 15,
+                itemBuilder: (_, index) => MovieItem(),
+                separatorBuilder: (_, index) => SizedBox(height: 20),
+              ),
+            ),
           ],
         ),
       ),
