@@ -55,6 +55,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: ListView.separated(
+                shrinkWrap: true,
                 itemCount: 15,
                 itemBuilder: (_, index) => MovieItem(),
                 separatorBuilder: (_, index) => SizedBox(height: 20),
