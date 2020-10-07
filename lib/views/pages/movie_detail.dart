@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_driving/models/movie.dart';
 import 'package:flutter_driving/utils/constants/index.dart';
 import 'package:flutter_driving/views/widgets/movie_detail/cast_list.dart';
@@ -26,9 +28,20 @@ class MovieDetailPage extends StatelessWidget {
                   children: [
                     Container(
                       width: double.infinity,
-                      child: Image.network(
-                        _movie.backdropPath,
+                      child: CachedNetworkImage(
+                        imageUrl: _movie.backdropPath,
                         fit: BoxFit.fill,
+                        progressIndicatorBuilder:
+                            (context, url, downloadProgress) =>
+                                Shimmer.fromColors(
+                          baseColor: Colors.grey[500],
+                          highlightColor: Colors.grey[100],
+                          child: Container(
+                            height: double.infinity,
+                            width: MediaQuery.of(context).size.height * 0.6,
+                          ),
+                        ),
+                        errorWidget: (context, url, error) => Icon(Icons.error),
                       ),
                     ),
                     Positioned(
