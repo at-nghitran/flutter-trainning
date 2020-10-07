@@ -4,6 +4,7 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Padding(
         padding: const EdgeInsets.only(
           top: 25.0,
@@ -30,6 +31,10 @@ class SearchPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: TextField(
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 19,
+                      ),
                       decoration: InputDecoration(
                         contentPadding: const EdgeInsets.only(
                           top: 8,

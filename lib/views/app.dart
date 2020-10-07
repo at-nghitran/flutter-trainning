@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
             fontSize: 13,
           ),
         ),
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: Colors.white,
       ),
       home: SplashPage(),
     );
