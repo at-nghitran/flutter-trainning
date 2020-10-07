@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_driving/utils/constants/index.dart';
 import 'package:flutter_driving/views/pages/search.dart';
-import 'package:flutter_driving/views/widgets/home/index.dart';
+import '../widgets/commons/movie_item.dart';
 
 class HomePage extends StatefulWidget {
   @override

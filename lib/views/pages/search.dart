@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_driving/views/widgets/home/index.dart';
+import '../widgets/commons/movie_item.dart';
 
 class SearchPage extends StatelessWidget {
   final TextStyle _inputTextStyle = TextStyle(

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter_driving/views/pages/movie_detail.dart';
 
 class MovieItem extends StatelessWidget {
@@ -76,18 +79,29 @@ class MovieItem extends StatelessWidget {
                 left: 15,
                 top: 0,
                 bottom: 0,
-                child: Container(
+                child: CachedNetworkImage(
+                  imageUrl:
+                      'https://upload.wikimedia.org/wikipedia/en/4/45/Bloodshot_-_official_film_poster.jpeg',
+                  fit: BoxFit.fill,
                   width: MediaQuery.of(context).size.width * 0.3,
-                  decoration: BoxDecoration(
-                    color: Colors.black12,
-                    borderRadius: BorderRadius.circular(8),
+                  height: double.infinity,
+                  progressIndicatorBuilder: (context, url, downloadProgress) =>
+                      Shimmer.fromColors(
+                    baseColor: Colors.grey[500],
+                    highlightColor: Colors.grey[100],
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.black12,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
                   ),
-                  child: ClipRRect(
+                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  imageBuilder: (_, imageProvider) => ClipRRect(
                     borderRadius: BorderRadius.circular(8),
                     child: Image(
                       fit: BoxFit.cover,
-                      image: NetworkImage(
-                          'https://upload.wikimedia.org/wikipedia/en/4/45/Bloodshot_-_official_film_poster.jpeg'),
+                      image: imageProvider,
                     ),
                   ),
                 ),
