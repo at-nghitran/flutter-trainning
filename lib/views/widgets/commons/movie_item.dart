@@ -55,7 +55,7 @@ class MovieItem extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Action Advanture',
+                              'Action Adventure',
                               style: _textStyle,
                               overflow: TextOverflow.ellipsis,
                             ),

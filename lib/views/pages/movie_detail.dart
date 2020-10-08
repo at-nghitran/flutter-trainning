@@ -114,7 +114,7 @@ class MovieDetailPage extends StatelessWidget {
                         ),
                       ),
                       HeaderText(
-                        text: 'Cast & Crue',
+                        text: 'Cast & Crew',
                       ),
                       CastList()
                     ],
