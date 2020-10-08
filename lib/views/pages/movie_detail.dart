@@ -31,6 +31,7 @@ class MovieDetailPage extends StatelessWidget {
                       child: CachedNetworkImage(
                         imageUrl: _movie.backdropPath,
                         fit: BoxFit.fill,
+                        width: MediaQuery.of(context).size.width,
                         progressIndicatorBuilder:
                             (context, url, downloadProgress) =>
                                 Shimmer.fromColors(
@@ -38,10 +39,13 @@ class MovieDetailPage extends StatelessWidget {
                           highlightColor: Colors.grey[100],
                           child: Container(
                             height: double.infinity,
-                            width: MediaQuery.of(context).size.height * 0.6,
+                            width: MediaQuery.of(context).size.width,
                           ),
                         ),
-                        errorWidget: (context, url, error) => Icon(Icons.error),
+                        errorWidget: (context, url, error) => Icon(
+                          Icons.error,
+                          color: AppColors.dark_red,
+                        ),
                       ),
                     ),
                     Positioned(

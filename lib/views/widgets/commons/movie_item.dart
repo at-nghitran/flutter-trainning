@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_driving/utils/constants/index.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
@@ -96,7 +97,10 @@ class MovieItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  errorWidget: (context, url, error) => Icon(
+                    Icons.error,
+                    color: AppColors.dark_red,
+                  ),
                   imageBuilder: (_, imageProvider) => ClipRRect(
                     borderRadius: BorderRadius.circular(8),
                     child: Image(
