@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_driving/utils/constants/colors.dart';
 import 'package:get/get.dart';
+// Utils
+import '../../../utils/constants/strings/index.dart' as strings;
 
 class CustomAlertDialog extends StatelessWidget {
   final String message;
@@ -13,7 +15,7 @@ class CustomAlertDialog extends StatelessWidget {
 
   const CustomAlertDialog({
     @required this.message,
-    this.txtButtonClose = 'Close',
+    this.txtButtonClose = strings.btnClose,
     this.backgroundColor = Colors.black,
     this.colorTextMessage = Colors.white,
     this.colorTxtButtonClose = AppColors.dark_red,

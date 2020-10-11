@@ -6,6 +6,8 @@ import 'package:flutter_driving/views/widgets/commons/custom_alert.dart';
 import 'package:flutter_driving/views/pages/home.dart';
 // Models
 import 'package:flutter_driving/models/login_info.dart';
+// Utils
+import '../utils/constants/strings/index.dart' as strings;
 
 class LoginController extends GetxController {
   final loginInfo = LoginInfo().obs;
@@ -44,7 +46,7 @@ class LoginController extends GetxController {
     if (emailController.text.trim() != 'training@gmail.com' ||
         passwordController.text.trim() != '123456') {
       Get.dialog(
-        CustomAlertDialog(message: 'Email or Password incorrect'),
+        CustomAlertDialog(message: strings.accountIncorrect),
       );
     } else {
       isSuccess.value = true;

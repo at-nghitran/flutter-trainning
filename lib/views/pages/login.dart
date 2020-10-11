@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:flutter_driving/controllers/login_controller.dart';
 // Utils
 import 'package:flutter_driving/utils/constants/index.dart';
+import '../../utils/constants/strings/index.dart' as strings;
 // Views
 import 'package:flutter_driving/views/widgets/commons/custom_texfield.dart';
 import 'package:flutter_driving/views/widgets/login/header.dart';
@@ -30,7 +31,7 @@ class LoginPage extends StatelessWidget {
                   children: [
                     CustomTextField(
                       controller: _loginController.emailController,
-                      text: 'Email',
+                      text: strings.email,
                       icon: Icons.email,
                       onChange: (value) {
                         _loginController.onEmailChange();
@@ -39,7 +40,7 @@ class LoginPage extends StatelessWidget {
                     SizedBox(height: 30),
                     CustomTextField(
                       controller: _loginController.passwordController,
-                      text: 'Password',
+                      text: strings.password,
                       icon: Icons.lock,
                       obscureText: true,
                       onChange: (value) {
@@ -70,7 +71,7 @@ class LoginPage extends StatelessWidget {
                                 _loginController.onLogin();
                               },
                         child: Text(
-                          'Login',
+                          strings.login,
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,

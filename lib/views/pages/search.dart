@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 // Widgets
 import '../widgets/commons/movie_item.dart';
+// Utils
+import '../../utils/constants/strings/index.dart' as strings;
 
 class SearchPage extends StatelessWidget {
   final TextStyle _inputTextStyle = TextStyle(
@@ -47,11 +49,13 @@ class SearchPage extends StatelessWidget {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        hintText: 'Search',
+                        hintText: strings.txtSearch,
                         hintStyle:
                             _inputTextStyle.copyWith(color: Colors.white30),
                         suffixIcon: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            // To-Do
+                          },
                           highlightColor: Colors.transparent,
                           splashColor: Colors.transparent,
                           child: Icon(

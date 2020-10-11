@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 // Utils
 import 'package:flutter_driving/utils/constants/index.dart';
+import '../../utils/constants/strings/index.dart' as strings;
 // Views
 import 'package:flutter_driving/views/pages/search.dart';
 import '../widgets/commons/movie_item.dart';
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Expanded(
                     child: Text(
-                      'Popular Movie',
+                      strings.popularMovie,
                       style: TextStyle(
                         fontSize: 30,
                         color: Colors.white,
