@@ -1,9 +1,13 @@
+// Cores
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+// Controllers
 import 'package:flutter_driving/controllers/login_controller.dart';
+// Utils
 import 'package:flutter_driving/utils/constants/index.dart';
+// Views
 import 'package:flutter_driving/views/widgets/commons/custom_texfield.dart';
 import 'package:flutter_driving/views/widgets/login/header.dart';
-import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
   final LoginController _loginController = Get.put(LoginController());
@@ -11,7 +15,6 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final orientation = MediaQuery.of(context).orientation;
-    final bool _isDisabled = false;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -48,7 +51,9 @@ class LoginPage extends StatelessWidget {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
-                        color: _isDisabled ? Colors.white : AppColors.dark_red,
+                        color: _loginController.isDisabled.value
+                            ? Colors.white
+                            : AppColors.dark_red,
                       ),
                       child: OutlineButton(
                         padding: const EdgeInsets.symmetric(vertical: 13),
@@ -69,7 +74,9 @@ class LoginPage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: _isDisabled ? Colors.grey : Colors.white,
+                            color: _loginController.isDisabled.value
+                                ? Colors.grey
+                                : Colors.white,
                           ),
                         ),
                       ),

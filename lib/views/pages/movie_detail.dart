@@ -1,8 +1,12 @@
+// Cores
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+// Models
 import 'package:flutter_driving/models/movie.dart';
+// Utils
 import 'package:flutter_driving/utils/constants/index.dart';
+// Views
 import 'package:flutter_driving/views/widgets/movie_detail/cast_list.dart';
 
 class MovieDetailPage extends StatelessWidget {

@@ -1,5 +1,8 @@
+// Cores
 import 'package:flutter/material.dart';
+// Utils
 import 'package:flutter_driving/utils/constants/index.dart';
+// Views
 import 'package:flutter_driving/views/pages/search.dart';
 import '../widgets/commons/movie_item.dart';
 

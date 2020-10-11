@@ -1,4 +1,6 @@
+// Cores
 import 'package:flutter/material.dart';
+// Widgets
 import '../widgets/commons/movie_item.dart';
 
 class SearchPage extends StatelessWidget {

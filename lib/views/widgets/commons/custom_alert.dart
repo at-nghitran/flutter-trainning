@@ -17,7 +17,7 @@ class CustomAlertDialog extends StatelessWidget {
     this.backgroundColor = Colors.black,
     this.colorTextMessage = Colors.white,
     this.colorTxtButtonClose = AppColors.dark_red,
-    this.borderRadiusDialog = 30,
+    this.borderRadiusDialog = 10,
     Key key,
   }) : super(key: key);
 
@@ -27,17 +27,15 @@ class CustomAlertDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(borderRadiusDialog),
       ),
+      contentPadding: EdgeInsets.zero,
       backgroundColor: backgroundColor,
-      content: Padding(
-        padding: EdgeInsets.only(
-          top: 10,
-          left: 10,
-          right: 10,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: EdgeInsets.all(15),
+            child: Text(
               message,
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -46,24 +44,25 @@ class CustomAlertDialog extends StatelessWidget {
                 color: colorTextMessage,
               ),
             ),
-            SizedBox(
-              height: 15,
-            ),
-            RaisedButton(
-              color: Colors.white,
-              shape: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
+          ),
+          Column(
+            children: [
+              Divider(
+                color: Colors.white,
+                height: 1,
               ),
-              onPressed: () {
-                Get.back();
-              },
-              child: Text(
-                txtButtonClose,
-                style: TextStyle(color: colorTxtButtonClose),
+              TextButton(
+                child: Text(
+                  txtButtonClose,
+                  style: TextStyle(color: colorTxtButtonClose),
+                ),
+                onPressed: () {
+                  Get.back();
+                },
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
+        ],
       ),
     );
   }
