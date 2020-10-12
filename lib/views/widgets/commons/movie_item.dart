@@ -1,8 +1,10 @@
+// Cores
 import 'package:flutter/material.dart';
-import 'package:flutter_driving/utils/constants/index.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-
+// Utils
+import 'package:flutter_driving/utils/constants/index.dart';
+// Views
 import 'package:flutter_driving/views/pages/movie_detail.dart';
 
 class MovieItem extends StatelessWidget {

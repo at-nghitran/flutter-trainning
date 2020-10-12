@@ -1,3 +1,4 @@
+// Cores
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -5,17 +6,20 @@ class CustomTextField extends StatelessWidget {
   final bool obscureText;
   final IconData icon;
   final Function onChange;
+  final TextEditingController controller;
   const CustomTextField({
     Key key,
     this.text,
     this.icon,
     this.obscureText = false,
     this.onChange,
+    this.controller,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(
         isDense: true,

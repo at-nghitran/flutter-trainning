@@ -1,7 +1,9 @@
+// Cores
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-
+// Utils
 import 'package:flutter_driving/utils/constants/index.dart';
+// Views
 import 'package:flutter_driving/views/pages/login.dart';
 
 class SplashPage extends StatelessWidget {
