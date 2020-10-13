@@ -1,8 +1,7 @@
 // Cores
 import 'package:flutter/material.dart';
+import 'package:flutter_driving/views/pages/login.dart';
 import 'package:get/get.dart';
-// Views
-import 'package:flutter_driving/views/pages/splash.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: Colors.black,
       ),
-      home: SplashPage(),
+      home: LoginPage(),
     );
   }
 }
