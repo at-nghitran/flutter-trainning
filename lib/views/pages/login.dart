@@ -14,14 +14,13 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final LoginController _loginController = Get.put(LoginController());
-    final orientation = MediaQuery.of(context).orientation;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
             LoginHeader(),
-            if (orientation == Orientation.portrait) SizedBox(height: 50),
+            if (context.isPortrait) SizedBox(height: 50),
             Container(
               padding: const EdgeInsets.all(Numbers.appPadding),
               child: Column(
