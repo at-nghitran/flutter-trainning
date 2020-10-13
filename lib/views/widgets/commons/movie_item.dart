@@ -1,5 +1,6 @@
 // Cores
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 // Utils
@@ -16,10 +17,9 @@ class MovieItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: GestureDetector(
-        onTap: () => Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => MovieDetailPage(),
-          ),
+        onTap: () => Get.to(
+          MovieDetailPage(),
+          transition: Transition.zoom,
         ),
         child: Container(
           height: MediaQuery.of(context).size.width * 0.4,

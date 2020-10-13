@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {
                       Get.to(
                         SearchPage(),
-                        transition: Transition.zoom,
+                        transition: Transition.rightToLeft,
                       );
                     },
                     icon: Icon(
