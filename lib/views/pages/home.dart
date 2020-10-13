@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 // Utils
 import 'package:flutter_driving/utils/constants/index.dart';
+import 'package:get/get.dart';
 import '../../utils/constants/strings/index.dart' as strings;
 // Views
 import 'package:flutter_driving/views/pages/search.dart';
@@ -44,8 +45,9 @@ class _HomePageState extends State<HomePage> {
                   IconButton(
                     padding: const EdgeInsets.all(0.0),
                     onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => SearchPage()),
+                      Get.to(
+                        SearchPage(),
+                        transition: Transition.zoom,
                       );
                     },
                     icon: Icon(
