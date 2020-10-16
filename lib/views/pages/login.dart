@@ -45,36 +45,38 @@ class LoginPage extends StatelessWidget {
                     },
                   ),
                   SizedBox(height: 30),
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      color: _loginController.isDisabled.value
-                          ? Colors.white
-                          : AppColors.dark_red,
-                    ),
-                    child: OutlineButton(
-                      padding: const EdgeInsets.symmetric(vertical: 13),
-                      textColor: Colors.black,
-                      color: Colors.blue,
-                      shape: RoundedRectangleBorder(
+                  Obx(
+                    () => Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
+                        color: _loginController.isDisabled.value
+                            ? Colors.white
+                            : AppColors.dark_red,
                       ),
-                      disabledTextColor: Colors.grey,
-                      onPressed: _loginController.isDisabled.value
-                          ? null
-                          : () {
-                              FocusScope.of(context).unfocus();
-                              _loginController.onLogin();
-                            },
-                      child: Text(
-                        strings.login,
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: _loginController.isDisabled.value
-                              ? Colors.grey
-                              : Colors.white,
+                      child: OutlineButton(
+                        padding: const EdgeInsets.symmetric(vertical: 13),
+                        textColor: Colors.black,
+                        color: Colors.blue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(40),
+                        ),
+                        disabledTextColor: Colors.grey,
+                        onPressed: _loginController.isDisabled.value
+                            ? null
+                            : () {
+                                FocusScope.of(context).unfocus();
+                                _loginController.onLogin();
+                              },
+                        child: Text(
+                          strings.login,
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: _loginController.isDisabled.value
+                                ? Colors.grey
+                                : Colors.white,
+                          ),
                         ),
                       ),
                     ),
